@@ -1,6 +1,6 @@
 import { useCart } from "../contexts/CartContext";
 import { useNavigate } from "react-router-dom";
-import supabase from "/src/assets/supabase.js";
+import { supabase } from "/src/assets/supabase.js";
 
 export default function Carrinho() {
   const { carrinho, removerDoCarrinho, limparCarrinho } = useCart();
