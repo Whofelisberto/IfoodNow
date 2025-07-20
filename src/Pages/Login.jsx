@@ -12,13 +12,14 @@ export default function Login() {
   }
 
   const handleLogin = async () => {
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password: senha,
-    });
-    
+  const { data, error } = await supabase.auth.signUp({
+  email,
+  password: senha,
+});
+
     if (error) {
       alert("Erro no login: " + error.message);
+        console.log("Usuário logado:", data.user);
     } else {
       alert("Login realizado com sucesso!");
       navigate("/");
