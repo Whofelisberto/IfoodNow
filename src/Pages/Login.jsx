@@ -8,22 +8,22 @@ export default function Login() {
   const navigate = useNavigate();
 
   const goCadastro = () => {
-    navigate("/cadastro")
-  }
+    navigate("/cadastro");
+  };
 
   const handleLogin = async () => {
-  const { data, error } = await supabase.auth.signUp({
-  email,
-  password: senha,
-});
+    const { error } = await supabase.auth.signUp({
+      email,
+      password: senha,
+    });
 
     if (error) {
       alert("Erro no login: " + error.message);
-        console.log("Usuário logado:", data.user);
-    } else {
-      alert("Login realizado com sucesso!");
-      navigate("/");
+      return;
     }
+
+    alert("Login realizado com sucesso!");
+    navigate("/");
   };
 
   return (

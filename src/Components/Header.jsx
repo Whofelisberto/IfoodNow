@@ -5,16 +5,16 @@ import { useState } from "react";
 
 const Header = () => {
   const [menuOpen, SetMenuOpen] = useState(false);
-  
   const toggleMenu = () => {
     SetMenuOpen((prev) => !prev);
-  };
 
+  };
 
   return (
     <div className="shadow">
       <nav className="text-xl text-gray-900 bg-gray-50 container mx-auto flex justify-between items-center p-3">
-        <h1 className="text-2xl font-semibold">IfoodNow</h1>
+        <h1 className="text-2xl font-semibold">
+             FoodNow 🍽️</h1>
       
         <div className="lg:hidden">
           <button onClick={toggleMenu} className="text-xl">
